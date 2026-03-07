@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Dividir";
+}
+
+<h2>Calculadora  División</h2>
+
+<form method="post">
+    <div>
+        <label>Número 1</label>
+        <input type="number" step="any" name="numero1" required />
+    </div>
+
+    <div>
+        <label>Número 2</label>
+        <input type="number" step="any" name="numero2" required />
+    </div>
+
+    <br />
+
+    <button type="submit">Dividir</button>
+</form>
+
+@if (ViewBag.Resultado != null)
+{
+    <h3>Resultado: @ViewBag.Resultado</h3>
+}

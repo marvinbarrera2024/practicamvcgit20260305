@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Resta";
+}
+
+<h2>Calculadora de Resta</h2>
+
+<form method="post">
+    <div>
+        <label>Primer Número:</label>
+        <input type="number" name="num1" required />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Segundo Número:</label>
+        <input type="number" name="num2" required />
+    </div>
+
+    <br />
+
+    <button type="submit">Restar</button>
+</form>
+
+@if (ViewBag.Resultado != null)
+{
+    <h3>Resultado de la resta: @ViewBag.Resultado</h3>
+}

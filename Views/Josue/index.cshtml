@@ -1,0 +1,33 @@
+<h2>Calculadora</h2>
+
+<form asp-action="Index" method="post">
+
+<label>Número 1</label>
+<input type="number" name="num1" required />
+
+<br /><br />
+
+<label>Número 2</label>
+<input type="number" name="num2" required />
+
+<br /><br />
+
+<label>Operación</label>
+<select name="operacion">
+<option value="sumar">Sumar</option>
+<option value="restar">Restar</option>
+<option value="multiplicar">Multiplicar</option>
+<option value="dividir">Dividir</option>
+</select>
+
+<br /><br />
+
+<button type="submit">Calcular</button>
+
+</form>
+
+@if (ViewBag.Resultado != null)
+{
+<br />
+<h3>Resultado: @ViewBag.Resultado</h3>
+}

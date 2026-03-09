@@ -1,0 +1,110 @@
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewBag.Title = "Calculadora";
+}
+    <style>
+
+        body {
+            background: linear-gradient(135deg,#667eea,#764ba2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Segoe UI;
+        }
+
+        .card-calculadora {
+            width: 350px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: white;
+        }
+
+        .titulo {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .btn-calcular {
+            width: 100%;
+            background: #667eea;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+            .btn-calcular:hover {
+                background: #4b5bdc;
+            }
+
+        .resultado {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f1f1f1;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+    </style>
+    <div class="card-calculadora">
+
+        <div class="titulo">
+            🧮 Calculadora
+        </div>
+
+        <form method="post">
+
+            <div class="mb-3">
+                <label>Número 1</label>
+                <input type="number" step="any" name="numero1" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+                <label>Operación</label>
+                <select name="operacion" class="form-control">
+
+                    <option value="suma">➕ Sumar</option>
+                    <option value="resta">➖ Restar</option>
+                    <option value="multiplicacion">✖ Multiplicar</option>
+                    <option value="division">➗ Dividir</option>
+                    
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label>Número 2</label>
+                <input type="number" step="any" name="numero2" class="form-control" required />
+            </div>
+
+            <button type="submit" class="btn btn-calcular">
+                Calcular
+            </button>
+
+        </form>
+
+ 
+        
+            <div class="resultado">
+                Resultado: <strong>@ViewBag.Resultado</strong>
+            </div>
+        
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger mt-3">
+                @ViewBag.Error
+            </div>
+        }
+
+    </div>

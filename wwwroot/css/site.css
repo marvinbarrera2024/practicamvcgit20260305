@@ -1,0 +1,126 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+.btn-rosado {
+    background-color: #FF69B4 !important;
+    color: white !important;
+    border: 2px solid #FF1493 !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block; /* Para asegurar que se vea bien */
+}
+
+.btn-rosado:hover {
+    background-color: #FF1493 !important;
+    transform: scale(1.1);
+}
+/* Contenedor principal para centrar */
+.calculadora-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+/* Tarjeta blanca con sombra */
+.calculadora-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 500px;
+    border: 2px solid #ffc0cb; /* Borde rosa claro */
+}
+
+.titulo-calc {
+    color: #FF69B4;
+    font-weight: bold;
+}
+
+/* Alineación de los inputs */
+.input-group-calc {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-field, .select-field {
+    border: 2px solid #ffe4e1;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-field:focus {
+    border-color: #FF69B4;
+}
+
+/* Caja del resultado */
+.resultado-box {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #fff0f5;
+    border-radius: 15px;
+}
+
+.resultado-numero {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FF1493;
+}
+.botones-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-limpiar {
+    background-color: #f8f9fa !important;
+    color: #6c757d !important;
+    border: 2px solid #dee2e6 !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none; /* Quita la línea de link */
+    transition: all 0.3s ease;
+}
+
+.btn-limpiar:hover {
+    background-color: #e2e6ea !important;
+    color: #FF1493 !important; /* El texto se pone rosa al pasar el mouse */
+    border-color: #FFC0CB !important;
+}

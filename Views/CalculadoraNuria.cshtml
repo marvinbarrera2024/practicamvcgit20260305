@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Calculadora Funcional</title>
+    <style>
+        /* VISTA: Estilos visuales */
+        body {
+            background: #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .calc-container {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            width: 300px;
+        }
+
+        #screen {
+            background: #333;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            height: 60px;
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 15px;
+            box-sizing: border-box;
+            font-size: 2rem;
+            overflow: hidden;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            height: 60px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            background: #444;
+            color: white;
+            transition: 0.2s;
+        }
+
+            button:hover {
+                background: #555;
+            }
+
+            button:active {
+                transform: scale(0.95);
+            }
+
+        .op {
+            background: #f39c12;
+        }
+
+            .op:hover {
+                background: #e67e22;
+            }
+
+        .clear {
+            background: #e74c3c;
+            grid-column: span 2;
+        }
+
+        .equal {
+            background: #27ae60;
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calc-container">
+        <div id="screen">0</div>
+        <div class="grid">
+            <button class="clear" onclick="ctrl.clear()">AC</button>
+            <button class="op" onclick="ctrl.add('/')">/</button>
+            <button class="op" onclick="ctrl.add('*')">×</button>
+
+            <button onclick="ctrl.add('7')">7</button>
+            <button onclick="ctrl.add('8')">8</button>
+            <button onclick="ctrl.add('9')">9</button>
+            <button class="op" onclick="ctrl.add('-')">-</button>
+
+            <button onclick="ctrl.add('4')">4</button>
+            <button onclick="ctrl.add('5')">5</button>
+            <button onclick="ctrl.add('6')">6</button>
+            <button class="op" onclick="ctrl.add('+')">+</button>
+
+            <button onclick="ctrl.add('1')">1</button>
+            <button onclick="ctrl.add('2')">2</button>
+            <button onclick="ctrl.add('3')">3</button>
+            <button class="equal" onclick="ctrl.calc()">=</button>
+
+            <button style="grid-column: span 2" onclick="ctrl.add('0')">0</button>
+            <button onclick="ctrl.add('.')">.</button>
+        </div>
+    </div>
+
+    <script>
+        const ctrl = {
+            expr: "",
+
+            update() {
+                const screen = document.getElementById('screen');
+                screen.innerText = this.expr || "0";
+            },
+
+            add(char) {
+                // Pequeña validación para no repetir operadores seguidos
+                const last = this.expr.slice(-1);
+                if (isNaN(char) && isNaN(last) && char !== '.') return;
+
+                this.expr += char;
+                this.update();
+            },
+
+            clear() {
+                this.expr = "";
+                this.update();
+            },
+
+            calc() {
+                try {
+                    // El "corazón" del controlador: resuelve la cadena de texto
+                    const res = eval(this.expr);
+                    this.expr = String(res);
+                    this.update();
+                } catch (e) {
+                    this.expr = "";
+                    document.getElementById('screen').innerText = "Error";
+                }
+            }
+        };
+    </script>
+</body>
+</html>

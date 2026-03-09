@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Calculadora";
+}
+
+<link rel="stylesheet" href="~/css/calculadora.css" />
+
+<div class="calculadora">
+
+    <h2>Calculadora Kevin</h2>
+
+    <form method="post">
+
+        <div class="inputs">
+            <input type="number" step="any" name="num1" placeholder="Número 1" required />
+            <input type="number" step="any" name="num2" placeholder="Número 2" required />
+        </div>
+
+        <div class="botones">
+
+            <button class="sumar" type="submit" name="operacion" value="sumar">+</button>
+
+            <button class="restar" type="submit" name="operacion" value="restar">−</button>
+
+            <button class="multi" type="submit" name="operacion" value="multiplicar">×</button>
+
+            <button class="div" type="submit" name="operacion" value="dividir">÷</button>
+
+        </div>
+
+    </form>
+
+    @if (ViewBag.Resultado != null)
+    {
+        <div class="resultado">
+            Resultado: <strong>@ViewBag.Resultado</strong>
+        </div>
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="resultado error">
+            @ViewBag.Error
+        </div>
+    }
+
+</div>

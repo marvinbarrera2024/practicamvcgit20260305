@@ -82,3 +82,7 @@ nunit-*.xml
 /.vs/practicamvcgit20260305/FileContentIndex/merges/feaafcdc-6937-47b6-b758-869f8e629077.vsidx
 /.vs/practicamvcgit20260305/FileContentIndex/2fc14f7c-5186-497b-b0e4-9ee3b9b74150.vsidx
 /.vs/practicamvcgit20260305/FileContentIndex/003f4851-19b2-4320-9d1c-56dbea942eb4.vsidx
+
+
+#VS
+.vs/

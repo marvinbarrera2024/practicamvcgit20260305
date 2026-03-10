@@ -6,19 +6,54 @@ namespace practicamvcgit20260305.Controllers;
 
 public class GabrielController : Controller
 {
-    public IActionResult Index()
-    {
-        return View();
-    }  
+    public IActionResult Index() => View();
 
-    public IActionResult Privacy()
+    [HttpPost]
+    public IActionResult Index(double numero1, double numero2, string operacion)
     {
-        return View();
-    }
+        double resultado = 0;
+        string mensaje = "";
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        switch (operacion)
+        {
+            case "sumar":
+                resultado = numero1 + numero2;
+                mensaje = $"La suma de {numero1} y {numero2} es {resultado}.";
+                break;
+
+            case "restar":
+                resultado = numero1 - numero2;
+                mensaje = $"La resta de {numero1} y {numero2} es {resultado}.";
+                break;
+
+            case "multiplicar":
+                resultado = numero1 * numero2;
+                mensaje = $"La multiplicación de {numero1} y {numero2} es {resultado}.";
+                break;
+
+            case "dividir":
+                if (numero2 != 0)
+                {
+                    resultado = numero1 / numero2;
+                    mensaje = $"La división de {numero1} entre {numero2} es {resultado}.";
+                }
+                else
+                {
+                    mensaje = "No se puede dividir por cero.";
+                }
+                break;
+
+            default:
+                mensaje = "Operación no válida.";
+                break;
+        }
+
+        ViewBag.resultado = resultado;
+        ViewBag.mensaje = mensaje;
+        ViewBag.numero1 = numero1;
+        ViewBag.numero2 = numero2;
+        ViewBag.operacion = operacion;
+
+        return View();
     }
 }

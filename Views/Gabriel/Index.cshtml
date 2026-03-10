@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Calculadora de Gabriel";
+}
+
+<h2>Calculadora</h2>
+
+<form asp-action="Index" asp-controller="Gabriel" method="post">
+    <div>
+        <label>Número 1:</label>
+        <input type="number" step="any" name="numero1" value="@ViewBag.Numero1" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Número 2:</label>
+        <input type="number" step="any" name="numero2" value="@ViewBag.Numero2" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Operación:</label>
+        <select name="operacion" required>
+            <option value="">Seleccione una opción</option>
+            <option value="sumar" selected="@(ViewBag.Operación == "SUMAR")">Sumar</option>
+            <option value="restar" selected="@(ViewBag.Operación == "restar")">Restar</option>
+            <option value="multiplicar" selected="@(ViewBag.Operación == "multiplicar")">Multiplicar</option>
+            <option value="dividir" selected="@(ViewBag.Operación == "dividir")">Dividir</option>
+
+        </select>
+
+    </div>
+    <br/>
+
+    <button type="submit">Calcular</button>
+</form>
+
+<br />
+
+@if (ViewBag.Resultado != null)
+{
+    <p>@ViewBag.Mensaje</p>
+}
+
+@if (ViewBag.Error != null)
+{
+    <p>@ViewBag.Mensaje</p>
+}

@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Calculadora";
+}
+
+<h2>Calculadora</h2>
+
+<form asp-controller="Calculadora" asp-action="Calcular" method="post">
+
+    <label>Número 1:</label>
+    <input type="number" name="num1" required />
+
+    <br /><br />
+
+    <label>Número 2:</label>
+    <input type="number" name="num2" required />
+
+    <br /><br />
+
+    <button type="submit" name="operacion" value="sumar">Sumar</button>
+    <button type="submit" name="operacion" value="restar">Restar</button>
+    <button type="submit" name="operacion" value="multiplicar">Multiplicar</button>
+    <button type="submit" name="operacion" value="dividir">Dividir</button>
+
+</form>
+
+<br />
+
+@if (ViewBag.Resultado != null)
+{
+    <h3>Resultado: @ViewBag.Resultado</h3>
+}
+
+@if (ViewBag.Error != null)
+{
+    <h3 style="color:red">@ViewBag.Error</h3>
+}

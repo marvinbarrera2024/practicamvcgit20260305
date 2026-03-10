@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using practicamvcgit20260305.Models;
-
+//hola
 namespace practicamvcgit20260305.Controllers;
 
 public class HomeController : Controller
@@ -10,7 +10,7 @@ public class HomeController : Controller
     {
         return View();
     }
-
+//hi
     public IActionResult Privacy()
     {
         return View();

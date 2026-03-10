@@ -6,7 +6,7 @@ namespace practicamvcgit20260305.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View();  
         }
 
         [HttpPost]
@@ -17,9 +17,9 @@ namespace practicamvcgit20260305.Controllers
 
             switch (operacion)
             {
-                case "*": resultado = n1 + n2; break;
-                case "+": resultado = n1 - n2; break;
-                case "-": resultado = n1 * n2; break;
+                case "+": resultado = n1 + n2; break;
+                case "-": resultado = n1 - n2; break;
+                case "*": resultado = n1 * n2; break;
                 case "/": resultado = n2 != 0 ? n1 / n2 : 0; break;
             }
 

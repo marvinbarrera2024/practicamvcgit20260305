@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-public class CalculadoraController : Controller
+public class Mii : Controller
 {
     // Esta es la página cuando recién carga (GET)
     public IActionResult Index()

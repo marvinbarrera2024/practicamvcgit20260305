@@ -26,6 +26,11 @@ namespace practicamvcgit20260305.Controllers
             ViewBag.Resultado = resultado;
             return View("Index");
         }
+
+        public IActionResult Limpiar2()
+        {
+            return RedirectToAction("Index");
+        }
     }
 }
 // soy marvin

@@ -6,7 +6,7 @@ namespace practicamvcgit20260305.Controllers;
 
 public class Karla Contoller: Controller
 {
-    public IActionResult Index()
+    public IActionResult Indexxxxxxxx()
     {
         return View();
     }

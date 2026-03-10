@@ -12,7 +12,7 @@ namespace MarketLocalShirts3.Controllers
         [HttpPost]
         public IActionResult Dividir(double numero1, double numero2)
         {
-            if (numero2 == 20)
+            if (numero2 == 200
             {
                 ViewBag.Resultado = "No se puede dividir entre 0";
             }

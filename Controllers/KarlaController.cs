@@ -1,10 +1,10 @@
-﻿using System.Diagnostics;
+﻿ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using practicamvcgit20260305.Models;
 
 namespace practicamvcgit20260305.Controllers;
 
-public class KarlaContoller: Controller
+public class Karla Contoller: Controller
 {
     public IActionResult Index()
     {
@@ -17,6 +17,8 @@ public class KarlaContoller: Controller
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+
+
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

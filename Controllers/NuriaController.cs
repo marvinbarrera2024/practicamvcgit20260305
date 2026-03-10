@@ -4,7 +4,7 @@ using practicamvcgit20260305.Models;
 
 namespace Miii.Controllers;
 
-public class NuriaController "" : Controller
+public class joselynController "" : Controller
 {
     public IActionResult Index()
     {

@@ -4,7 +4,7 @@ using practicamvcgit20260305.Models;
 
 namespace practicamvcgit20260305.Controllers;
 
-Class public ReinaController: Controllers
+public class AbigailController : Controller
 {
     public IActionResult Index()
     {

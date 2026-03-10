@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-namespace lacalculadora.Controllers
+namespace Mi.Controllers
 {
     public class CalculadoraController : Controller
     {
